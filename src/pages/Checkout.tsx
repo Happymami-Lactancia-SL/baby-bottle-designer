@@ -98,11 +98,11 @@ const Checkout = () => {
             <div>
               <label className={labelCls}>Teléfono <span className="text-[#f49898]">*</span></label>
               <div className="flex gap-2">
-                <select value={form.phonePrefix} onChange={(e) => set("phonePrefix", e.target.value)} className={`${selectCls} w-[130px] flex-shrink-0`}>
+                <select value={form.phonePrefix} onChange={(e) => set("phonePrefix", e.target.value)} className={`${selectCls} w-[170px] flex-shrink-0`}>
                   <option>España (+34)</option>
                 </select>
                 <input type="tel" value={form.phone} onChange={(e) => set("phone", e.target.value)}
-                  placeholder="+34603470573" className={inputCls} required />
+                  placeholder="603470573" className={`${inputCls} flex-1`} required />
               </div>
             </div>
 
