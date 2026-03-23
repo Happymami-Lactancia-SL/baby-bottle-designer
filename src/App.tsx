@@ -41,7 +41,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/baby-bottle-designer">
         <CartProvider>
           <Layout />
         </CartProvider>
