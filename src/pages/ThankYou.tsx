@@ -44,7 +44,7 @@ const ThankYou = () => {
         </p>
 
         {/* design pending notice */}
-        <div className="mt-8 rounded-[16px] border border-[#f49898]/30 bg-white px-8 py-6 text-left shadow-sm">
+        <div className="mt-8 rounded-[16px] border border-[#f49898]/30 bg-white px-5 py-5 text-left shadow-sm sm:px-8 sm:py-6">
           <div className="flex items-start gap-3">
             <i className="fa-solid fa-palette mt-1 text-[20px] text-[#f49898]" />
             <div>

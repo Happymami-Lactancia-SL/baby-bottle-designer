@@ -196,7 +196,7 @@ const Product = () => {
   return (
     <div className="bg-white">
       {/* ═══ HERO ═══ */}
-      <section className="mx-auto max-w-[1200px] px-6 pt-10 pb-6 md:px-10">
+      <section className="mx-auto max-w-[1200px] px-4 pt-8 pb-6 sm:px-6 sm:pt-10 md:px-10">
         <div className="grid items-start gap-10 md:grid-cols-2 lg:gap-16">
           {/* Left: images */}
           <div>
@@ -218,12 +218,12 @@ const Product = () => {
             </div>
 
             {/* Thumbnails */}
-            <div className="mt-5 flex gap-3">
+            <div className="mt-4 flex gap-2 sm:mt-5 sm:gap-3">
               {allImages.slice(0, VISIBLE_THUMBS).map((t, i) => (
                 <div
                   key={i}
                   onClick={() => setActiveImage(i)}
-                  className={`h-[80px] w-[80px] flex-shrink-0 cursor-pointer overflow-hidden rounded-[10px] border-2 bg-white p-1 transition-all hover:shadow-md ${
+                  className={`h-[60px] w-[60px] sm:h-[80px] sm:w-[80px] flex-shrink-0 cursor-pointer overflow-hidden rounded-[10px] border-2 bg-white p-1 transition-all hover:shadow-md ${
                     activeImage === i ? "border-[#f49898]" : "border-[#d6dce4]"
                   }`}
                 >
@@ -233,7 +233,7 @@ const Product = () => {
               {allImages.length > VISIBLE_THUMBS && (
                 <button
                   onClick={() => openGallery(VISIBLE_THUMBS)}
-                  className="flex h-[80px] w-[80px] flex-shrink-0 items-center justify-center rounded-[10px] border border-[#d6dce4] bg-[#3a3a3a] text-white text-[18px] font-bold cursor-pointer hover:bg-[#2a2a2a] transition-colors"
+                  className="flex h-[60px] w-[60px] sm:h-[80px] sm:w-[80px] flex-shrink-0 items-center justify-center rounded-[10px] border border-[#d6dce4] bg-[#3a3a3a] text-white text-[18px] font-bold cursor-pointer hover:bg-[#2a2a2a] transition-colors"
                 >
                   +{allImages.length - VISIBLE_THUMBS}
                 </button>
@@ -241,10 +241,10 @@ const Product = () => {
             </div>
 
             {/* ── Tu diseño ── */}
-            <div className="mt-8 rounded-[16px] bg-[#fdf5f0] px-8 py-6 text-center">
+            <div className="mt-8 rounded-[16px] bg-[#fdf5f0] px-4 py-5 text-center sm:px-8 sm:py-6">
               <h3 className="text-[16px] font-body text-[#4a5568]">Tu diseño</h3>
-              <div className="mx-auto mt-4 max-w-[440px] rounded-[10px] border border-[#e8ddd5] bg-white px-6 py-4 text-left text-[14px] font-body">
-                <div className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-2">
+              <div className="mx-auto mt-4 max-w-[440px] rounded-[10px] border border-[#e8ddd5] bg-white px-4 py-3 text-left text-[13px] font-body sm:px-6 sm:py-4 sm:text-[14px]">
+                <div className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-2 sm:gap-x-6">
                   <span className="italic text-[#f49898]">Forma del pecho:</span>
                   <span className="font-semibold text-[#26334d]">Redondo</span>
                   <span className="italic text-[#f49898]">Longitud del pezón:</span>
@@ -322,7 +322,7 @@ const Product = () => {
 
           {/* Right: info */}
           <div>
-            <h1 className="font-display text-[34px] font-bold leading-tight text-[#26334d]">
+            <h1 className="font-display text-[26px] sm:text-[34px] font-bold leading-tight text-[#26334d]">
               Biberón Personalizado
             </h1>
             <p className="mt-1 text-[18px] font-body text-[#4a5568]">
@@ -339,7 +339,7 @@ const Product = () => {
                 <button
                   key={pack.id}
                   onClick={() => handleSelect(pack.id)}
-                  className={`relative w-full rounded-full border-2 px-6 py-4 text-left transition-all ${
+                  className={`relative w-full rounded-full border-2 px-4 py-3 text-left transition-all sm:px-6 sm:py-4 ${
                     selected === pack.id
                       ? "border-[#f49898] shadow-sm"
                       : "border-[#d6dce4] hover:border-[#b0b8c4]"
@@ -379,9 +379,9 @@ const Product = () => {
 
             {/* Payment & shipping info */}
             <div className="mt-8 space-y-3">
-              <div className="flex items-center gap-3 rounded-[8px] border border-[#d6dce4] px-4 py-3">
+              <div className="flex items-center gap-3 rounded-[8px] border border-[#d6dce4] px-3 py-3 sm:px-4 flex-wrap">
                 <span className="text-[12px] text-[#737b8c]">🔒 Pago seguro garantizado</span>
-                <div className="flex items-center gap-2 text-[11px] font-bold text-[#4a5568]">
+                <div className="flex items-center gap-2 text-[11px] font-bold text-[#4a5568] flex-wrap">
                   <span className="rounded bg-[#1a1f71] px-[6px] py-[2px] text-white">VISA</span>
                   <span className="text-[#eb001b]">●●</span>
                   <span>Apple Pay</span>
@@ -409,15 +409,15 @@ const Product = () => {
       </section>
 
       {/* ═══ TABS ═══ */}
-      <section className="mx-auto max-w-[1100px] px-6 pb-10">
+      <section className="mx-auto max-w-[1100px] px-4 pb-10 sm:px-6">
         <div className="rounded-[16px] border border-[#d6dce4] overflow-hidden">
           {/* Tab headers */}
-          <div className="flex border-b border-[#d6dce4]">
+          <div className="flex overflow-x-auto border-b border-[#d6dce4]" style={{ scrollbarWidth: "none" }}>
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`flex-1 py-4 text-center text-[15px] font-body transition-colors ${
+                className={`flex-1 min-w-[120px] whitespace-nowrap py-3 px-2 text-center text-[13px] sm:text-[15px] sm:py-4 font-body transition-colors ${
                   activeTab === tab
                     ? "font-semibold text-[#26334d] border-b-[3px] border-[#f49898]"
                     : "text-[#737b8c] hover:text-[#26334d]"
@@ -428,7 +428,7 @@ const Product = () => {
             ))}
           </div>
           {/* Tab content */}
-          <div className="p-8">
+          <div className="p-4 sm:p-8">
             {/* ── Acompañamiento por matronas ── */}
             {activeTab === "Acompañamiento por matronas" && (
               <div className="grid gap-8 md:grid-cols-2 md:items-start">
@@ -633,8 +633,8 @@ const Product = () => {
       </section>
 
       {/* ═══ TE PUEDE INTERESAR ═══ */}
-      <section className="mx-auto max-w-[1000px] px-6 pb-14">
-        <div className="rounded-[20px] bg-[#f5f0eb] px-8 py-8">
+      <section className="mx-auto max-w-[1000px] px-4 pb-14 sm:px-6">
+        <div className="rounded-[20px] bg-[#f5f0eb] px-4 py-6 sm:px-8 sm:py-8">
           <h3 className="text-center text-[16px] font-body text-[#4a5568]">Te puede interesar</h3>
           <div className="mx-1 mt-1 h-[3px] w-[80px] mx-auto rounded bg-[#f49898]" />
 
@@ -664,8 +664,8 @@ const Product = () => {
       </section>
 
       {/* ═══ FAQ ═══ */}
-      <section className="mx-auto max-w-[1100px] px-6 pb-10">
-        <h2 className="text-center font-display text-[32px] italic text-[#737b8c]">
+      <section className="mx-auto max-w-[1100px] px-4 pb-10 sm:px-6">
+        <h2 className="text-center font-display text-[28px] sm:text-[32px] italic text-[#737b8c]">
           ¿Aún tienes dudas?
         </h2>
 

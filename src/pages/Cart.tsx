@@ -100,7 +100,7 @@ const Cart = () => {
       </div>
 
       {/* ═══ Main content ═══ */}
-      <div className="mx-auto max-w-[1200px] px-6 pt-10 pb-14">
+      <div className="mx-auto max-w-[1200px] px-4 pt-8 pb-14 sm:px-6 sm:pt-10">
         <h1 className="text-center font-display text-[28px] font-bold text-[#26334d] md:text-[32px]">
           Tu carrito Happymami
         </h1>
@@ -120,7 +120,7 @@ const Cart = () => {
             {items.map((item) => (
               <div
                 key={item.id}
-                className="grid items-center gap-4 border-b border-[#d6dce4] py-5 md:grid-cols-[1fr_100px_90px_100px]"
+                className="grid items-center gap-3 border-b border-[#d6dce4] py-5 sm:gap-4 md:grid-cols-[1fr_100px_90px_100px]"
               >
                 {/* Product info */}
                 <div className="flex items-center gap-4">
@@ -142,42 +142,45 @@ const Cart = () => {
 
                   </div>
                 </div>
-                {/* Price */}
-                <span className="text-[14px] font-body text-[#26334d]">{fmt(item.price)} €</span>
-                {/* Quantity */}
-                <div className="flex items-center rounded-[6px] border border-[#d6dce4] w-fit">
-                  <button
-                    onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                    className="px-2 py-1 text-[#737b8c] transition-colors hover:text-[#26334d]"
-                  >
-                    <Minus size={12} />
-                  </button>
-                  <span className="w-[28px] text-center text-[14px] font-body text-[#26334d]">
-                    {item.quantity}
-                  </span>
-                  <button
-                    onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                    className="px-2 py-1 text-[#737b8c] transition-colors hover:text-[#26334d]"
-                  >
-                    <Plus size={12} />
-                  </button>
-                </div>
-                {/* Subtotal */}
-                <div className="text-right">
-                  {item.originalPrice && (
-                    <span className="mr-2 text-[13px] font-body text-[#a0a8b4] line-through">
-                      {fmt(item.originalPrice * item.quantity)} €
+                {/* Price / Quantity / Subtotal – inline on mobile, grid cells on md+ */}
+                <div className="flex flex-wrap items-center gap-3 md:contents">
+                  {/* Price */}
+                  <span className="text-[14px] font-body text-[#26334d]">{fmt(item.price)} €</span>
+                  {/* Quantity */}
+                  <div className="flex items-center rounded-[6px] border border-[#d6dce4] w-fit">
+                    <button
+                      onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                      className="px-2 py-1 text-[#737b8c] transition-colors hover:text-[#26334d]"
+                    >
+                      <Minus size={12} />
+                    </button>
+                    <span className="w-[28px] text-center text-[14px] font-body text-[#26334d]">
+                      {item.quantity}
                     </span>
-                  )}
-                  <span className="text-[16px] font-body font-bold text-[#f49898]">
-                    {fmt(item.price * item.quantity)} €
-                  </span>
+                    <button
+                      onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                      className="px-2 py-1 text-[#737b8c] transition-colors hover:text-[#26334d]"
+                    >
+                      <Plus size={12} />
+                    </button>
+                  </div>
+                  {/* Subtotal */}
+                  <div className="ml-auto text-right">
+                    {item.originalPrice && (
+                      <span className="mr-2 text-[13px] font-body text-[#a0a8b4] line-through">
+                        {fmt(item.originalPrice * item.quantity)} €
+                      </span>
+                    )}
+                    <span className="text-[16px] font-body font-bold text-[#f49898]">
+                      {fmt(item.price * item.quantity)} €
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}
 
             {/* ── Matrona row ── */}
-            <div className="flex items-center justify-between rounded-[12px] bg-[#eef4f8] px-5 py-4 mt-1 border-b border-[#d6dce4]">
+            <div className="flex flex-col gap-3 rounded-[12px] bg-[#eef4f8] px-4 py-4 mt-1 border-b border-[#d6dce4] sm:flex-row sm:items-center sm:justify-between sm:px-5">
               <div className="flex items-center gap-3">
                 <img
                   src="https://happymami.com/wp-content/plugins/happymami-productos/assets/img/producto-matrona.webp"
@@ -188,7 +191,7 @@ const Cart = () => {
                   Tu matrona asignada vía whatsapp
                 </span>
               </div>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 sm:gap-4">
                 <span className="text-[14px] font-body text-[#a0a8b4] line-through">19,90€</span>
                 <span className="text-[16px] font-body font-bold text-green-600">Gratis</span>
               </div>

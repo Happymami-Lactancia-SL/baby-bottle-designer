@@ -98,7 +98,7 @@ const Checkout = () => {
             <div>
               <label className={labelCls}>Teléfono <span className="text-[#f49898]">*</span></label>
               <div className="flex gap-2">
-                <select value={form.phonePrefix} onChange={(e) => set("phonePrefix", e.target.value)} className={`${selectCls} w-[170px] flex-shrink-0`}>
+                <select value={form.phonePrefix} onChange={(e) => set("phonePrefix", e.target.value)} className={`${selectCls} w-[140px] sm:w-[170px] flex-shrink-0`}>
                   <option>España (+34)</option>
                 </select>
                 <input type="tel" value={form.phone} onChange={(e) => set("phone", e.target.value)}
@@ -116,7 +116,7 @@ const Checkout = () => {
             {/* Billing address */}
             <h3 className="pt-2 text-[16px] font-body font-bold text-[#26334d]">Dirección de facturación</h3>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className={labelCls}>Nombre</label>
                 <input type="text" value={form.nombre} onChange={(e) => set("nombre", e.target.value)} className={inputCls} required />
@@ -147,7 +147,7 @@ const Checkout = () => {
                 placeholder="Número de apartamento, suite, vivienda, etc. (opcional)" className={inputCls} />
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className={labelCls}>Código postal</label>
                 <input type="text" value={form.cp} onChange={(e) => set("cp", e.target.value)}
